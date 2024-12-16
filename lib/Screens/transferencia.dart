@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:math';
 
 class TransferenciasScreen extends StatefulWidget {
   const TransferenciasScreen({super.key});
@@ -24,6 +25,38 @@ class _TransferenciasScreenState extends State<TransferenciasScreen> {
       'nombre': nombre,
       'fecha': DateTime.now(),
     });
+
+    int idTransferencia = Random().nextInt(100000); 
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          title: const Text('Comprobante de Transferencia'),
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  Text('ID de Transferencia: $idTransferencia'),
+                  const SizedBox(height: 10),
+                  Text('Nombre: $nombre'),
+                  Text('Cuenta Destino: $cuentaDestino'),
+                  Text('Monto: \$${monto.toStringAsFixed(2)}'),
+                  Text('Fecha: ${DateTime.now().toString()}'),
+                ],
+              ),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cerrar'),
+            ),
+          ],
+        );
+      },
+    );
 
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text('Transferencia realizada')));

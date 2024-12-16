@@ -12,7 +12,8 @@ class InicioScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //Image.asset(''),
+            Image.asset
+            ('lib/assets/imagenes/pato.png'),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(

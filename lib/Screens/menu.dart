@@ -11,12 +11,10 @@ class MenuScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Menú Principal')),
       body: ListView(
         children: [
-          // Sección de las opciones de menú
           Card(
             child: ListTile(
               title: const Text('Transferencias'),
               onTap: () {
-                // Navegar a la pantalla de Transferencias
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const TransferenciasScreen()),
@@ -28,7 +26,6 @@ class MenuScreen extends StatelessWidget {
             child: ListTile(
               title: const Text('Movimientos'),
               onTap: () {
-                // Navegar a la pantalla de Movimientos
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const MovimientosScreen()),
@@ -37,14 +34,13 @@ class MenuScreen extends StatelessWidget {
             ),
           ),
 
-          // Sección para la imagen y descripción del banco
-          const SizedBox(height: 40), // Espacio entre el menú y la imagen
+          const SizedBox(height: 40), 
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
                 Image.asset(
-                  'assets/banco_logo.png',
+                  'lib/assets/banco.png',
                   width: 150,
                   height: 150,
                 ),
