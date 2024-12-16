@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "322361375016",
+    "project_id": "banco2-6d06b",
+    "storage_bucket": "banco2-6d06b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322361375016:android:9db9c1c1230b6d82a6781d",
+        "android_client_info": {
+          "package_name": "examen.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD0NzPhmQpSoIEUgqu2weKorP7ICpRTCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

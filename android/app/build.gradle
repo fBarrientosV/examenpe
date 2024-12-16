@@ -1,0 +1,42 @@
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services' // Asegúrate de que esté configurado para Firebase
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.examen"  // Tu namespace (puede ser otro si lo cambiaste en el manifest)
+    compileSdkVersion 34  // Asegúrate de que esto coincida con la versión de SDK que estás usando
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "examen.app" // Asegúrate de que coincida con tu ID de paquete en el AndroidManifest.xml
+        minSdkVersion 23 // Asegúrate de que esto esté configurado correctamente, aquí se establece en 23 como ejemplo
+        targetSdkVersion 33  // Asegúrate de que esto esté configurado con la versión más reciente de SDK
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            // TODO: Agrega tu configuración de firma para el build release
+            signingConfig signingConfigs.debug  // Asegúrate de que la firma esté configurada correctamente para release
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Esta línea apunta a la ubicación de tu proyecto Flutter
+}
